@@ -1,0 +1,85 @@
+
+body {
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  
+}
+
+header {
+  width: 100%;
+  background-color: #C9C9CB;
+}
+
+.banner {
+  width: 30%;
+  height:100px;
+  margin-left: 5%;
+  
+}
+
+header li a {
+  text-decoration: none;
+  color: black;
+  
+}
+header li a:hover {
+  text-decoration: none;
+  color: black;
+  
+}
+
+header nav { 
+  background-color: white;
+  padding: .1% 0;
+  text-align: center;
+  font-family: 'Hammersmith One', sans-serif;
+  padding-bottom: 1.5%;
+  padding-right: 5%;
+  border-bottom: 3px solid #C9C9CB;
+  padding-top: 1%;
+}
+
+header nav li {
+  list-style: none;
+  display: inline;
+  float: left;
+  width: 10%;
+}
+
+header li a:hover {
+  border-bottom: 2px solid #C9C9CB;
+}
+
+.clear-fix {
+  clear: both;
+  
+}
+
+article {
+  padding: 3% 11%;
+  
+}
+
+h2 {
+  font-family: 'Hammersmith One', sans-serif;
+  color: #C41E36;
+  display: inline; 
+  padding: 1%;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-inner {
+  width: 70%;
+  margin: auto;
+}
+
+.carousel {
+  width: 80%;
+  margin: auto;
+}
+
