@@ -1,54 +1,62 @@
+html {
+  width: 100%;
+}
 
 body {
   width: 100%;
   margin: auto;
   background-color: white;
-  
 }
 
 header {
   width: 100%;
   background-color: #C9C9CB;
+  position: fixed;
+  z-index: 10000;
 }
 
 .banner {
   width: 30%;
   height:100px;
-  margin-left: 5%;
-  
+  margin-left: 3%;
 }
-
+/*Header and sticky header*/
 header li a {
   text-decoration: none;
-  color: black;
-  
-}
-header li a:hover {
-  text-decoration: none;
-  color: black;
-  
+  color: black; 
 }
 
 header nav { 
   background-color: white;
-  padding: .1% 0;
   text-align: center;
   font-family: 'Hammersmith One', sans-serif;
-  padding-bottom: 1.5%;
-  padding-right: 5%;
-  border-bottom: 3px solid #C9C9CB;
-  padding-top: 1%;
+  font-size: 0.8rem;
+  padding-bottom: 2.6%;
+  padding-top: 0.01%;
+  
 }
 
 header nav li {
   list-style: none;
   display: inline;
   float: left;
-  width: 10%;
+  margin-right: 5%
 }
+
 
 header li a:hover {
   border-bottom: 2px solid #C9C9CB;
+}
+
+header.sticky .banner{
+  width: 23%;
+  height: 70px;
+  
+}
+
+header.sticky {
+box-shadow: 0 0 10px rgba(0,0,0,0.4);  
+  
 }
 
 .clear-fix {
@@ -57,29 +65,89 @@ header li a:hover {
 }
 
 article {
-  padding: 3% 11%;
-  
+  padding: 3% 0%;
+  position: relative;
+  top: 125px;
 }
 
-h2 {
+h2, h3 {
   font-family: 'Hammersmith One', sans-serif;
   color: #C41E36;
-  display: inline; 
-  padding: 1%;
+  text-align: center;
 }
 
-.item img {
+.about-div{
+  padding: 2% 5%;
+  height: 550px;
+}
+
+
+
+
+/*Styles for slideshow */
+.slideshow-div {
+  height: 500px;
+  padding-top: 5%;
+  background-color: #C9C9CB;
+}
+.slide-viewer {
+  position: relative;
+  overflow: hidden;
+  height: 450px;
+  width: 75%;
+  margin: auto;
+}
+
+
+.slide-group {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+}
+
+.slide:first-child {
+  display: block;
+}
+
+.slide img {
   width: 100%;
   height: 100%;
 }
 
-.carousel-inner {
-  width: 70%;
-  margin: auto;
+.fa-circle {
+  font-size: .7rem;
+  margin: 1%;
+  color: #C41E36;
+  
 }
 
-.carousel {
-  width: 80%;
-  margin: auto;
+.slide-buttons {
+  position: relative;
+  left: 45%;
+  margin-top: -4%;
+  margin-bottom: 5%;
 }
 
+.active {
+  color: yellow;
+  
+}
+
+
+/*Officer Styles*/
+
+.officer-div li {
+  list-style: none;
+  
+}
+
+.officer-div {
+  padding: 5% 11%;
+}
