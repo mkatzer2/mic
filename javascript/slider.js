@@ -71,7 +71,8 @@ $('.slider').each(function() { // for each slider run this function (might have 
 //=======================function creating officer info
 var officers = [];
 //add image of the officer as well!
-function officerInfo(name, age, position, island, flag, quote) {
+function officerInfo(pic, name, age, position, island, flag, quote) {
+  this.pic = pic;
   this.name = name;
   this.age = age;
   this.position = position;
@@ -81,10 +82,16 @@ function officerInfo(name, age, position, island, flag, quote) {
 }
 
 function intoArray () {
-  var jane = new officerInfo("Jane Doe", 24, "President", "Yap", "flag-yap.jpg", "I love MIC because ladi ladi ladi dah");
-  var john = new officerInfo("John Doe", 20, "Historian", "Yap", "../images/flag-yap.jpg", "I love MIC because ladi ladi ladi dah");
+  var dez = new officerInfo("dez.jpg", "Desiree Gross", "Senior", "President", "Palau", "flag-palau.jpg", "I love MIC because ladi ladi ladi dah");
+  var jerusa = new officerInfo("jerusa.jpg", "Jerusa Salas", "Sophomore", "Vice President & Political Chair", "Guam?", "guam.jpg", "I love MIC because ladi ladi ladi dah");
+  var kenny = new officerInfo("kenny.jpg", "Kenny Nguyen", "Sophomore", "Secretary", "", "", "I love MIC because ladi ladi ladi dah");
+  var rachael = new officerInfo("rachael.jpg", "Rachael Tamngin", "Senior", "Micronesia Night Chair", "Yap", "flag-yap.jpg", "I love MIC because ladi ladi ladi dah");
+  var madisen = new officerInfo("madisen.jpg", "Madisen Arurang", "Sophomore", "Treasurer", "Palau", "flag-palau.jpg", "I love MIC because ladi ladi ladi dah");
+  var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "", "", "I love MIC because ladi ladi ladi dah");
+  var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Hawaii?", "flag-yap.jpg", "I love MIC because ladi ladi ladi dah");
+  var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam?", "guam.jpg", "I love MIC because ladi ladi ladi dah");
   
-  officers.push.apply(officers, [jane, john]);
+  officers.push.apply(officers, [dez, jerusa, kenny, rachael, madisen, priscilla, zoya, raeleen]);
 }
                       
 intoArray();
@@ -92,16 +99,18 @@ console.log(officers);
 
 // is there a better way to do this??
 $(officers).each(function () {
-  $('.officer-div').append(
-  $('<h4 class="name">' + this.name + '</h4>'),
-  $('<ul>'),
-  $('<li class="age">Age: ' + this.age + '</li>'),
-  $('<li class="position">Officer Position: ' + this.position + '</li>'),
-  $('<li class="island">Related Island(s): ' + this.island + '</li>'),
+  var newRow = $('<div class="row officer">').appendTo('.officer-div');
+  var officerImage = $('<div class="col-xs-4"><img class="pic" src="images/' + this.pic + '"></div>').appendTo(newRow);
+  
+  var officerInfoDiv = $('<div class="col-xs-8 officer-info">').appendTo(newRow);
+  var officerInfo = $('<ul>').appendTo(officerInfoDiv);
+  $(officerInfo).append(
+  $('<li class="name"><h4>' + this.name + '</h4></li>'),
   $('<li class="flag"><img src="images/' + this.flag + '"></li>'),
-  $('<li class="quote">"' + this.quote + '"</li>'),
-  $('</ul>')
-  );
+  $('<li class="position">' + this.position + '</li>'),
+  $('<li class="age">' + this.age + '</li>'),
+  $('<li class="quote">"' + this.quote + '"</li>'));
+  
 });
 
 
