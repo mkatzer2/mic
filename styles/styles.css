@@ -45,7 +45,8 @@ header nav li {
   list-style: none;
   display: inline;
   float: left;
-  margin-right: 5%
+  margin-right: 5%;
+  
 }
 
 
@@ -57,14 +58,17 @@ header li a:hover {
 
 header.sticky .banner{
   width: 20%;
+  max-width: 160px;
+  min-width: 130px;
   height: 70px;
-  margin-left: 5%;
+  margin-left: 3%;
 }
 
 header.sticky {
   box-shadow: 0 0 10px rgba(0,0,0,0.4);  
   height: 112px;
   margin-top: 0;
+  overflow: hidden;
 }
 
 header.sticky nav {
@@ -191,6 +195,7 @@ h2, h3 {
 
 .officer-info .flag img, .officer-info .flag2 img {
   height: 3rem;
+  width: 55px;
   margin-bottom: 0;
   margin-left: 5%;
   position: relative;
@@ -223,5 +228,19 @@ h2, h3 {
 
 .calendar-div { 
   background-color: #C9C9CB;
-  padding: 10% 12%; 
+  position: relative; 
+  padding-bottom: 75%; 
+  height: 0; 
+  overflow: hidden;
+}
+
+.calendar-div iframe {
+  position: absolute; 
+  top:0; 
+  left: 0; 
+  width: 90%; 
+  height: 80%;
+  padding-left: 10%;
+  padding-top: 15%;
+  
 }
