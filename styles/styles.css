@@ -8,20 +8,24 @@ body {
   background-color: white;
 }
 
+
+
+/*Header and sticky header*/
 header {
   width: 100%;
   background-color: #C9C9CB;
   position: fixed;
+  height: 200px;
   z-index: 10000;
+  margin-top: 3%;
 }
 
 .banner {
-  width: 30%;
-  height:100px;
-  margin-left: 3%;
+  width: 50%;
+  height:200px;
+  margin-left: 22%;
 }
 
-/*Header and sticky header*/
 header li a {
   text-decoration: none;
   color: black; 
@@ -34,7 +38,7 @@ header nav {
   font-size: 1.2rem;
   padding-bottom: 2%;
   padding-top: 1%;
-  
+  display: none;
 }
 
 header nav li {
@@ -52,16 +56,21 @@ header li a:hover {
 }
 
 header.sticky .banner{
-  width: 23%;
+  width: 20%;
   height: 70px;
-  
+  margin-left: 5%;
 }
 
 header.sticky {
-box-shadow: 0 0 10px rgba(0,0,0,0.4);  
-  
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);  
+  height: 112px;
+  margin-top: 0;
 }
 
+header.sticky nav {
+  display: block;
+  
+}
 .clear-fix {
   clear: both;
   
@@ -80,8 +89,9 @@ h2, h3 {
 }
 
 .about-div{
-  padding: 2% 5%;
+  padding: 10% 5%;
   height: 550px;
+  margin-bottom: 10%;
 }
 
 
@@ -155,7 +165,7 @@ h2, h3 {
 }
 
 .officer-div {
-  padding: 5% 11%;
+  padding: 10% 11%;
 }
 
 .officer-info .name h4 {
@@ -206,4 +216,12 @@ h2, h3 {
   text-align: center;
   margin-bottom: 5%;
   font-weight: bold;
+}
+
+/*Calendar styles*/
+
+
+.calendar-div { 
+  background-color: #C9C9CB;
+  padding: 10% 12%; 
 }

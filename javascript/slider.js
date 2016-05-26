@@ -87,8 +87,8 @@ function intoArray () {
   var kenny = new officerInfo("kenny.jpg", "Kenny Nguyen", "Sophomore", "Secretary", "", "", "I love MIC because ladi ladi ladi dah");
   var rachael = new officerInfo("rachael.jpg", "Rachael Tamngin", "Senior", "Micronesia Night Chair", "Yap", "flag-yap.jpg", "I love MIC because ladi ladi ladi dah");
   var madisen = new officerInfo("madisen.jpg", "Madisen Arurang", "Sophomore", "Treasurer", "Palau", "flag-palau.jpg", "I love MIC because ladi ladi ladi dah");
-  var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "", "", "I love MIC because ladi ladi ladi dah");
-  var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Hawaii?", "flag-yap.jpg", "I love MIC because ladi ladi ladi dah");
+  var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "Ghana?", "ghana.jpg", "I love MIC because ladi ladi ladi dah");
+  var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Hawaii?", "hawaii.jpg", "I love MIC because ladi ladi ladi dah");
   var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam?", "guam.jpg", "I love MIC because ladi ladi ladi dah");
   
   officers.push.apply(officers, [dez, jerusa, kenny, rachael, madisen, priscilla, zoya, raeleen]);
