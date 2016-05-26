@@ -94,7 +94,7 @@ header.sticky nav {
 article {
   padding: 3% 0%;
   position: relative;
-  top: 125px;
+  top: 100px;
 }
 
 h2, h3 {
@@ -241,7 +241,7 @@ h2, h3 {
   background-color: #C9C9CB;
   position: relative; 
   padding-bottom: 70%; 
-  padding-top: 12%;
+  padding-top: 10%;
   height: 0; 
   overflow: hidden;
 }
