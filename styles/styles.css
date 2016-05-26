@@ -229,18 +229,18 @@ h2, h3 {
 .calendar-div { 
   background-color: #C9C9CB;
   position: relative; 
-  padding-bottom: 75%; 
+  padding-bottom: 70%; 
+  padding-top: 12%;
   height: 0; 
   overflow: hidden;
 }
 
 .calendar-div iframe {
   position: absolute; 
-  top:0; 
+  top:130px; 
   left: 0; 
   width: 90%; 
-  height: 80%;
+  height: 75%;
   padding-left: 10%;
-  padding-top: 15%;
-  
+  padding-top: 10%;
 }
