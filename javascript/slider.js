@@ -70,6 +70,7 @@ $('.slider').each(function() { // for each slider run this function (might have 
 
 //=======================function creating officer info
 var officers = [];
+var others = [];
 //add image of the officer as well!
 function officerInfo(pic, name, age, position, island, flag, flag2, quote) {
   this.pic = pic;
@@ -90,13 +91,19 @@ function intoArray () {
   var madisen = new officerInfo("madisen.jpg", "Madisen Arurang", "Sophomore", "Treasurer", "Palau", "flag-palau.jpg", "philippines.jpg", "I love MIC because ladi ladi ladi dah");
   var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "Ghana", "ghana.jpg", "", "I love MIC because ladi ladi ladi dah");
   var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Pohnpe and Chuuk", "pohnpe.jpg","chuuk.jpg", "I love MIC because ladi ladi ladi dah");
-  var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam?", "guam.jpg", "", "I love MIC because ladi ladi ladi dah");
+  var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam", "guam.jpg", "", "I love MIC because ladi ladi ladi dah");
+  var sophia = new officerInfo("sophia.jpg", "Sophia Tenorio", "Sophomore", "Historian", "Guam", "saipan.jpg", "", "I love MIC because ladi ladi ladi dah");
   
-  officers.push.apply(officers, [dez, jerusa, kenny, rachael, madisen, priscilla, zoya, raeleen]);
+  officers.push.apply(officers, [dez, jerusa, kenny, rachael, madisen, priscilla, zoya, raeleen, sophia]);
+  
+  var tino = new officerInfo("tino.jpg", "Tino Camacho", "", "PISC Director", "Guam", "guam.jpg", "", "I love MIC because ladi ladi ladi dah");
+  var daniele = new officerInfo("daniele.jpg", "Daniele Me&ntilde;ez", "", "ASUW President", "Guam", "guam.jpg", "philippines.jpg", "I love MIC because ladi ladi ladi dah");
+  
+  others.push.apply(others, [tino, daniele]);
+  
 }
                       
 intoArray();
-console.log(officers);
 
 // is there a better way to do this??
 $(officers).each(function () {
@@ -119,11 +126,31 @@ $(officers).each(function () {
   $('<li class="position">' + this.position + '</li>'),
   $('<li class="age">' + this.age + '</li>'),
   $('<li class="quote">"' + this.quote + '"</li>')
-  );
-  
+  );  
 });
 
-
+$(others).each(function () {
+  var newRow = $('<div class="row officer">').appendTo('.others-div');
+  var officerImage = $('<div class="col-xs-4"><img class="pic" src="images/' + this.pic + '"></div>').appendTo(newRow);
+  
+  var officerInfoDiv = $('<div class="col-xs-8 officer-info">').appendTo(newRow);
+  var officerInfo = $('<ul>').appendTo(officerInfoDiv);
+  $(officerInfo).append(
+  $('<li class="name"><h4>' + this.name + '</h4></li>'),
+  $('<li class="flag"><img src="images/' + this.flag + '"></li>')
+  );
+  //if statement so that people with only one flag will not have broken image for flag2
+  if (this.flag2 !== ""){
+    $(officerInfo).append(
+      $('<li class="flag2"><img src="images/' + this.flag2 + '"></li>')
+    );
+  }
+  $(officerInfo).append(
+  $('<li class="position">' + this.position + '</li>'),
+  $('<li class="age">' + this.age + '</li>'),
+  $('<li class="quote">"' + this.quote + '"</li>')
+  );  
+});
 //================sticky header 
 
 $(window).scroll(function() {

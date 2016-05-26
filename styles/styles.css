@@ -160,7 +160,7 @@ h2, h3 {
 
 /*Officer Styles*/
 
-.officer-div li {
+.people li {
   list-style: none;
 }
 
@@ -168,7 +168,7 @@ h2, h3 {
   border-radius: 50%;
 }
 
-.officer-div {
+.people {
   padding: 10% 11%;
 }
 
