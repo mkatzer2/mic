@@ -185,11 +185,11 @@ h2, h3 {
   font-size: 2rem;
 }
 
-.officer-info .flag {
+.officer-info .flag, .officer-info .flag2 {
   display: inline;
 }
 
-.officer-info .flag img {
+.officer-info .flag img, .officer-info .flag2 img {
   height: 3rem;
   margin-bottom: 0;
   margin-left: 5%;

@@ -71,25 +71,26 @@ $('.slider').each(function() { // for each slider run this function (might have 
 //=======================function creating officer info
 var officers = [];
 //add image of the officer as well!
-function officerInfo(pic, name, age, position, island, flag, quote) {
+function officerInfo(pic, name, age, position, island, flag, flag2, quote) {
   this.pic = pic;
   this.name = name;
   this.age = age;
   this.position = position;
   this.island = island;
   this.flag = flag;
+  this.flag2 = flag2;
   this.quote = quote;
 }
 
 function intoArray () {
-  var dez = new officerInfo("dez.jpg", "Desiree Gross", "Senior", "President", "Palau", "flag-palau.jpg", "I love MIC because ladi ladi ladi dah");
-  var jerusa = new officerInfo("jerusa.jpg", "Jerusa Salas", "Sophomore", "Vice President & Political Chair", "Guam?", "guam.jpg", "I love MIC because ladi ladi ladi dah");
-  var kenny = new officerInfo("kenny.jpg", "Kenny Nguyen", "Sophomore", "Secretary", "", "", "I love MIC because ladi ladi ladi dah");
-  var rachael = new officerInfo("rachael.jpg", "Rachael Tamngin", "Senior", "Micronesia Night Chair", "Yap", "flag-yap.jpg", "I love MIC because ladi ladi ladi dah");
-  var madisen = new officerInfo("madisen.jpg", "Madisen Arurang", "Sophomore", "Treasurer", "Palau", "flag-palau.jpg", "I love MIC because ladi ladi ladi dah");
-  var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "Ghana?", "ghana.jpg", "I love MIC because ladi ladi ladi dah");
-  var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Hawaii?", "hawaii.jpg", "I love MIC because ladi ladi ladi dah");
-  var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam?", "guam.jpg", "I love MIC because ladi ladi ladi dah");
+  var dez = new officerInfo("dez.jpg", "Desiree Gross", "Senior", "President", "Palau", "flag-palau.jpg","", "I love MIC because ladi ladi ladi dah");
+  var jerusa = new officerInfo("jerusa.jpg", "Jerusa Salas", "Sophomore", "Vice President & Political Chair", "Guam?", "guam.jpg", "", "I love MIC because ladi ladi ladi dah");
+  var kenny = new officerInfo("kenny.jpg", "Kenny Nguyen", "Sophomore", "Secretary", "Vietnam", "vietnam.jpg", "", "I love MIC because ladi ladi ladi dah");
+  var rachael = new officerInfo("rachael.jpg", "Rachael Tamngin", "Senior", "Micronesia Night Chair", "Yap", "flag-yap.jpg", "", "I love MIC because ladi ladi ladi dah");
+  var madisen = new officerInfo("madisen.jpg", "Madisen Arurang", "Sophomore", "Treasurer", "Palau", "flag-palau.jpg", "philippines.jpg", "I love MIC because ladi ladi ladi dah");
+  var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "Ghana", "ghana.jpg", "", "I love MIC because ladi ladi ladi dah");
+  var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Pohnpe and Chuuk", "pohnpe.jpg","chuuk.jpg", "I love MIC because ladi ladi ladi dah");
+  var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam?", "guam.jpg", "", "I love MIC because ladi ladi ladi dah");
   
   officers.push.apply(officers, [dez, jerusa, kenny, rachael, madisen, priscilla, zoya, raeleen]);
 }
@@ -106,10 +107,19 @@ $(officers).each(function () {
   var officerInfo = $('<ul>').appendTo(officerInfoDiv);
   $(officerInfo).append(
   $('<li class="name"><h4>' + this.name + '</h4></li>'),
-  $('<li class="flag"><img src="images/' + this.flag + '"></li>'),
+  $('<li class="flag"><img src="images/' + this.flag + '"></li>')
+  );
+  //if statement so that people with only one flag will not have broken image for flag2
+  if (this.flag2 !== ""){
+    $(officerInfo).append(
+      $('<li class="flag2"><img src="images/' + this.flag2 + '"></li>')
+    );
+  }
+  $(officerInfo).append(
   $('<li class="position">' + this.position + '</li>'),
   $('<li class="age">' + this.age + '</li>'),
-  $('<li class="quote">"' + this.quote + '"</li>'));
+  $('<li class="quote">"' + this.quote + '"</li>')
+  );
   
 });
 
@@ -123,4 +133,20 @@ if ($(this).scrollTop() > 1){
   else{
     $('header').removeClass("sticky");
   }
+});
+
+//==========internal links slide animation
+$(document).ready(function(){
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
 });
