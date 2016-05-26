@@ -92,12 +92,12 @@ function intoArray () {
   var madisen = new officerInfo("madisen.jpg", "Madisen Arurang", "Sophomore", "Treasurer", "Palau", "flag-palau.jpg", "","philippines.jpg", "I love MIC because ladi ladi ladi dah");
   var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "Ghana", "ghana.jpg", "", "", "I love MIC because ladi ladi ladi dah");
   var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Pohnpe and Chuuk", "pohnpe.jpg","chuuk.jpg", "", "I love MIC because ladi ladi ladi dah");
-  var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam", "guam.jpg", "", "", "I love MIC because ladi ladi ladi dah");
+  var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam", "guam.jpg", "flag-palau.jpg", "", "I love MIC because ladi ladi ladi dah");
   var sophia = new officerInfo("sophia.jpg", "Sophia Tenorio", "Sophomore", "Cultural Chair", "Guam", "saipan.jpg", "", "", "I love MIC because ladi ladi ladi dah");
   
   officers.push.apply(officers, [dez, jerusa, kenny, rachael, madisen, priscilla, zoya, raeleen, sophia]);
   
-  var tino = new officerInfo("tino.jpg", "Tino Camacho", "", "PISC Director", "Guam", "guam.jpg", "japan.jpg", "gay-pride.jpg", "I love MIC because ladi ladi ladi dah");
+  var tino = new officerInfo("tino.jpg", "Santino Camacho", "", "PISC Director", "Guam", "guam.jpg", "japan.jpg", "gay-pride.jpg", '<div class="comment more">"When I came to UW as a freshman I had a hard time finding people who I truly connected with outside of my friends I knew from Guam. During Dawg Dayz I went to the RSO tabling tents in red square and found MIC. I went to the first few meetings and I felt a little out of place. I felt like I did not know enough about my own culture. Over time I slow integrated into the club, but I wasn\'t very active as a freshman. When I went to MIC\'s annual event Micronesia Night and helped them prepare dinner for the event. I realized that I belonged with MIC. They took me in and treated me like one of their own. They mentored me and shaped me into the leader I am today. I owe my position as the next Pacific Islander Student Commission Director and the leader I am today to my MIC family and I am truly thankful for that. So what do I love about MIC? I love that they can create a family away from home and that they can welcome anyone into their community without question."<br><br>Si Yu\'us M&aring;\'&aring;se,<br>Santino Camacho</div>');
   var daniele = new officerInfo("daniele.jpg", "Daniele Me&ntilde;ez", "", "ASUW President", "Guam", "philippines.jpg", "", "", "I love MIC because ladi ladi ladi dah");
   
   others.push.apply(others, [tino, daniele]);
@@ -131,7 +131,7 @@ $(officers).each(function () {
   $(officerInfo).append(
   $('<li class="position">' + this.position + '</li>'),
   $('<li class="age">' + this.age + '</li>'),
-  $('<li class="quote">"' + this.quote + '"</li>')
+  $('<li class="quote">' + this.quote + '</li>')
   );  
 });
 
@@ -159,7 +159,7 @@ $(others).each(function () {
   $(officerInfo).append(
   $('<li class="position">' + this.position + '</li>'),
   $('<li class="age">' + this.age + '</li>'),
-  $('<li class="quote">"' + this.quote + '"</li>')
+  $('<li class="quote">' + this.quote + '</li>')
   );  
 });
 //================sticky header 
@@ -187,4 +187,41 @@ $(document).ready(function(){
 	        window.location.hash = target;
 	    });
 	});
+});
+
+//====== shortens quotes taken from online resource
+
+$(document).ready(function() {
+    var showChar = 300;
+    
+    var moretext = "more";
+    var dots = "...";
+    var lesstext = "<br>less";
+    $('.more').each(function() {
+        var content = $(this).html();
+ 
+        if(content.length > showChar) {
+ 
+            var c = content.substr(0, showChar);
+            var h = content.substr(showChar-1, content.length - showChar);
+ 
+            var html = c + '<span class="moreellipses">' + dots + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+ 
+            $(this).html(html);
+        }
+ 
+    });
+ 
+    $(".morelink").click(function(){
+        if($(this).hasClass("less")) {
+            $(this).removeClass("less");
+            $(this).html(moretext);
+        } else {
+            $(this).addClass("less");
+            $(this).html(lesstext);
+        }
+        $(this).parent().prev().toggle();
+        $(this).prev().toggle();
+        return false;
+    });
 });
