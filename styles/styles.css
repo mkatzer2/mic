@@ -102,7 +102,7 @@ h2, h3 {
 }
 
 .about-div{
-  padding: 10% 5%;
+  padding: 10% 11%;
   height: 550px;
   margin-bottom: 10%;
 }
@@ -112,15 +112,15 @@ h2, h3 {
 
 /*Styles for slideshow */
 .slideshow-div {
-  height: 550px;
-  padding-top: 5%;
+  height: 575px;
+  padding-top: 7%;
   background-color: #C9C9CB;
 }
 .slide-viewer {
   position: relative;
   overflow: hidden;
-  height: 450px;
-  width: 75%;
+  height: 400px;
+  width: 65%;
   margin: auto;
 }
 
@@ -188,14 +188,11 @@ h2, h3 {
   display: inline;
 }
 
-.officer-info .name {
-  display: inline;
-  
-}
 
 .officer-info .position {
   font-family: 'Courgette', cursive;
   font-size: 2rem;
+  display: inline;
 }
 
 .officer-info .flag, .officer-info .flag2, .officer-info .flag3 {
@@ -203,8 +200,8 @@ h2, h3 {
 }
 
 .officer-info .flag img, .officer-info .flag2 img, .officer-info .flag3 img {
-  height: 3rem;
-  width: 55px;
+  height: 2.5rem;
+  width: 40px;
   margin-bottom: 0;
   margin-left: 5%;
   position: relative;
@@ -212,7 +209,7 @@ h2, h3 {
 }
 
 .officer-info {
-  padding: 5%;
+  padding-top: 2%;
   
 }
 

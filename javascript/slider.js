@@ -93,7 +93,7 @@ function intoArray () {
   var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "Ghana", "ghana.jpg", "", "", "I love MIC because ladi ladi ladi dah");
   var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Pohnpe and Chuuk", "pohnpe.jpg","chuuk.jpg", "", "I love MIC because ladi ladi ladi dah");
   var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam", "guam.jpg", "flag-palau.jpg", "", "I love MIC because ladi ladi ladi dah");
-  var sophia = new officerInfo("sophia.jpg", "Sophia Tenorio", "Sophomore", "Cultural Chair", "Guam", "saipan.jpg", "", "", "I love MIC because ladi ladi ladi dah");
+  var sophia = new officerInfo("sophia.jpg", "Sophia Tenorio", "Sophomore", "Cultural Chair", "Guam", "saipan.jpg", "philippines.jpg", "", "I love MIC because ladi ladi ladi dah");
   
   officers.push.apply(officers, [dez, jerusa, kenny, rachael, madisen, priscilla, zoya, raeleen, sophia]);
   
@@ -114,10 +114,13 @@ $(officers).each(function () {
   var officerInfoDiv = $('<div class="col-xs-8 officer-info">').appendTo(newRow);
   var officerInfo = $('<ul>').appendTo(officerInfoDiv);
   $(officerInfo).append(
-  $('<li class="name"><h4>' + this.name + '</h4></li>'),
+  $('<li class="position">' + this.position + '</li>'),
   $('<li class="flag"><img src="images/' + this.flag + '"></li>')
   );
   //if statement so that people with only one flag will not have broken image for flag2
+  
+ 
+  
   if (this.flag2 !== ""){
     $(officerInfo).append(
       $('<li class="flag2"><img src="images/' + this.flag2 + '"></li>')
@@ -128,10 +131,10 @@ $(officers).each(function () {
       $('<li class="flag3"><img src="images/' + this.flag3 + '"></li>')
     );
   }
+  
   $(officerInfo).append(
-  $('<li class="position">' + this.position + '</li>'),
-  $('<li class="age">' + this.age + '</li>'),
-  $('<li class="quote">' + this.quote + '</li>')
+    $('<li class="name"><h4>' + this.name + '</h4></li>'),
+    $('<li class="quote">' + this.quote + '</li>')
   );  
 });
 
@@ -142,7 +145,7 @@ $(others).each(function () {
   var officerInfoDiv = $('<div class="col-xs-8 officer-info">').appendTo(newRow);
   var officerInfo = $('<ul>').appendTo(officerInfoDiv);
   $(officerInfo).append(
-  $('<li class="name"><h4>' + this.name + '</h4></li>'),
+  $('<li class="position">' + this.position + '</li>'),
   $('<li class="flag"><img src="images/' + this.flag + '"></li>')
   );
   //if statement so that people with only one flag will not have broken image for flag2
@@ -156,9 +159,8 @@ $(others).each(function () {
       $('<li class="flag3"><img src="images/' + this.flag3 + '"></li>')
     );
   }
-  $(officerInfo).append(
-  $('<li class="position">' + this.position + '</li>'),
-  $('<li class="age">' + this.age + '</li>'),
+  $(officerInfo).append(  
+  $('<li class="name"><h4>' + this.name + '</h4></li>'),
   $('<li class="quote">' + this.quote + '</li>')
   );  
 });
