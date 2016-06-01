@@ -97,7 +97,7 @@ article {
 
 h2, h3 {
   font-family: 'Hammersmith One', sans-serif;
-  color: #C41E36;
+  color: #77B3DD;
   text-align: center;
 }
 
@@ -114,7 +114,7 @@ h2, h3 {
 .slideshow-div {
   height: 575px;
   padding-top: 7%;
-  background-color: #C9C9CB;
+  background-color: rgba(201,201,203,0.2);
 }
 .slide-viewer {
   position: relative;
@@ -150,7 +150,7 @@ h2, h3 {
 .fa-circle {
   font-size: .7rem;
   margin: 1%;
-  color: #C41E36;
+  color: #77B3DD;
   
 }
 
@@ -233,7 +233,7 @@ h2, h3 {
 
 
 .calendar-div { 
-  background-color: #C9C9CB;
+  background-color: rgba(201,201,203,0.2);
   position: relative; 
   padding-bottom: 70%; 
   padding-top: 10%;
