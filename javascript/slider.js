@@ -90,8 +90,8 @@ function intoArray () {
   var kenny = new officerInfo("kenny.jpg", "Kenny Nguyen", "Sophomore", "Secretary", "Vietnam", "vietnam.jpg", "gay-pride.jpg", "", "I love MIC because ladi ladi ladi dah");
   var rachael = new officerInfo("rachael.jpg", "Rachael Tamngin", "Senior", "Micronesia Night Chair", "Yap", "flag-yap.jpg", "", "", "I love MIC because ladi ladi ladi dah");
   var madisen = new officerInfo("madisen.jpg", "Madisen Arurang", "Sophomore", "Treasurer", "Palau", "flag-palau.jpg", "","philippines.jpg", "I love MIC because ladi ladi ladi dah");
-  var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "Ghana", "ghana.jpg", "", "", "I love MIC because ladi ladi ladi dah");
-  var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Pohnpe and Chuuk", "pohnpe.jpg","chuuk.jpg", "", "I love MIC because ladi ladi ladi dah");
+  var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "Ghana", "ghana.jpg", "", "", '<div class="comment more">"There are so many things I can say about MIC, but what I will say is that MIC is a place that will welcome anyone no matter what you identify yourself as. A community that you can truly call your family. I have learned so much from being in MIC, along with meeting so many great people. This community has really helped me grow my character inside and outside of my education."</div>');
+  var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Pohnpe and Chuuk", "pohnpe.jpg","chuuk.jpg", "", " ");
   var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam", "guam.jpg", "flag-palau.jpg", "", "I love MIC because ladi ladi ladi dah");
   var sophia = new officerInfo("sophia.jpg", "Sophia Tenorio", "Sophomore", "Cultural Chair", "Guam", "saipan.jpg", "philippines.jpg", "", "I love MIC because ladi ladi ladi dah");
   
@@ -191,7 +191,7 @@ $(document).ready(function(){
 	});
 });
 
-//====== shortens quotes taken from online resource
+//====== shortens quotes, taken from online resource
 
 $(document).ready(function() {
     var showChar = 300;
