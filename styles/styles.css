@@ -1,9 +1,11 @@
 html {
   width: 100%;
+  height: 100%;
 }
 
 body {
   width: 100%;
+  height: 100%;
   margin: auto;
   background-color: white;
 }
@@ -14,7 +16,6 @@ body {
 header {
   width: 100%;
   background-color: #C9C9CB;
-  position: fixed;
   height: 200px;
   z-index: 10000;
   margin-top: 3%;
@@ -47,7 +48,7 @@ header nav li {
 }
 
 
-header li a:hover {
+header li a:hover{
   border-bottom: 2px solid black;
   text-decoration: none;
   color: black;
@@ -78,6 +79,7 @@ header.sticky {
   overflow: hidden;
   background-color: #C9C9CB;
   width: 100%;
+  position: fixed;
 }
 
 header.sticky nav {
@@ -91,8 +93,6 @@ header.sticky nav {
 
 article {
   padding: 3% 0%;
-  position: relative;
-  top: 100px;
 }
 
 h2, h3 {
@@ -102,12 +102,15 @@ h2, h3 {
 }
 
 .about-div{
-  padding: 10% 11%;
+  padding: 2% 11%;
   height: 550px;
   margin-bottom: 10%;
 }
 
-
+.about-sticky {
+  position: relative;
+  top: 235px;
+}
 
 
 /*Styles for slideshow */
@@ -237,7 +240,7 @@ h2, h3 {
   position: relative; 
   padding-bottom: 70%; 
   padding-top: 10%;
-  height: 0; 
+  height: 550px; 
   overflow: hidden;
 }
 
@@ -245,9 +248,9 @@ h2, h3 {
   position: absolute; 
   top:130px; 
   left: 0; 
-  width: 90%; 
-  height: 75%;
-  padding-left: 10%;
+  width: 85%; 
+  height: 70%;
+  padding-left: 15%;
   padding-top: 10%;
 }
 
@@ -261,4 +264,61 @@ a.morelink {
 .comment {
     width: 400px;
     margin: 10px;
+}
+
+/*Islands Map styles*/
+.islands-div {
+  padding-top: 18%;
+  height: 550px;
+}
+
+.islands-div h3 {
+  font-size: 4rem;
+  
+}
+
+/*Footer styles*/
+footer {
+  background-color: #C9C9CB;
+  color: white;
+  padding: 1% 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+footer li {
+  list-style: none;
+  float: left;
+  margin-right: 10%;
+}
+
+footer a {
+  color: white;
+  
+}
+
+footer .copyright {
+  float: right;
+}
+
+.fa-facebook-square {
+  font-size: 2rem;
+}
+.fa-envelope {
+  font-size: 1.7rem;
+}
+
+footer ul {
+  margin-left: -10%;
+}
+
+.hide {
+  display: none;
+  
+}
+
+footer li a:hover { 
+  text-decoration: none;
+  color: black;
+  
 }

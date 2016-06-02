@@ -85,20 +85,20 @@ function officerInfo(pic, name, age, position, island, flag, flag2,flag3, quote)
 }
 
 function intoArray () {
-  var dez = new officerInfo("dez.jpg", "Desiree Gross", "Senior", "President", "Palau", "flag-palau.jpg","", "", "I love MIC because ladi ladi ladi dah");
-  var jerusa = new officerInfo("jerusa.jpg", "Jerusa Salas", "Sophomore", "Vice President & Political Chair", "Guam?", "guam.jpg", "", "", "I love MIC because ladi ladi ladi dah");
-  var kenny = new officerInfo("kenny.jpg", "Kenny Nguyen", "Sophomore", "Secretary", "Vietnam", "vietnam.jpg", "gay-pride.jpg", "", "I love MIC because ladi ladi ladi dah");
-  var rachael = new officerInfo("rachael.jpg", "Rachael Tamngin", "Senior", "Micronesia Night Chair", "Yap", "flag-yap.jpg", "", "", "I love MIC because ladi ladi ladi dah");
-  var madisen = new officerInfo("madisen.jpg", "Madisen Arurang", "Sophomore", "Treasurer", "Palau", "flag-palau.jpg", "","philippines.jpg", "I love MIC because ladi ladi ladi dah");
+  var dez = new officerInfo("dez.jpg", "Desiree Gross", "Senior", "President", "Palau", "flag-palau.jpg","", "", '<div class="comment more">"This community is special to me because I have developed a better understanding of who I am culturally. And I love that I am instantly put in a good mood whenever I enter MIC spaces."</div>');
+  var jerusa = new officerInfo("jerusa.jpg", "Jerusa Salas", "Sophomore", "Vice President & Political Chair", "Guam?", "guam.jpg", "", "", "");
+  var kenny = new officerInfo("kenny.jpg", "Kenny Nguyen", "Sophomore", "Secretary", "Vietnam", "vietnam.jpg", "gay-pride.jpg", "", "");
+  var rachael = new officerInfo("rachael.jpg", "Rachael Tamngin", "Senior", "Micronesia Night Chair", "Yap", "flag-yap.jpg", "", "", "");
+  var madisen = new officerInfo("madisen.jpg", "Madisen Arurang", "Sophomore", "Treasurer", "Palau", "flag-palau.jpg", "","philippines.jpg", "");
   var priscilla = new officerInfo("priscilla.jpg", "Priscilla Donkor", "Senior?", "Public Relations", "Ghana", "ghana.jpg", "", "", '<div class="comment more">"There are so many things I can say about MIC, but what I will say is that MIC is a place that will welcome anyone no matter what you identify yourself as. A community that you can truly call your family. I have learned so much from being in MIC, along with meeting so many great people. This community has really helped me grow my character inside and outside of my education."</div>');
   var zoya = new officerInfo("zoya.jpg", "Zoya Hartman", "Junior", "MOM Chair", "Pohnpe and Chuuk", "pohnpe.jpg","chuuk.jpg", "", " ");
-  var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam", "guam.jpg", "flag-palau.jpg", "", "I love MIC because ladi ladi ladi dah");
-  var sophia = new officerInfo("sophia.jpg", "Sophia Tenorio", "Sophomore", "Cultural Chair", "Guam", "saipan.jpg", "philippines.jpg", "", "I love MIC because ladi ladi ladi dah");
+  var raeleen = new officerInfo("raeleen.jpg", "Raeleen Camacho", "Sophomore", "Historian", "Guam", "guam.jpg", "flag-palau.jpg", "", "");
+  var sophia = new officerInfo("sophia.jpg", "Sophia Tenorio", "Sophomore", "Cultural Chair", "Guam", "saipan.jpg", "philippines.jpg", "", "");
   
   officers.push.apply(officers, [dez, jerusa, kenny, rachael, madisen, priscilla, zoya, raeleen, sophia]);
   
   var tino = new officerInfo("tino.jpg", "Santino Camacho", "", "PISC Director", "Guam", "guam.jpg", "japan.jpg", "gay-pride.jpg", '<div class="comment more">"When I came to UW as a freshman I had a hard time finding people who I truly connected with outside of my friends I knew from Guam. During Dawg Dayz I went to the RSO tabling tents in red square and found MIC. I went to the first few meetings and I felt a little out of place. I felt like I did not know enough about my own culture. Over time I slow integrated into the club, but I wasn\'t very active as a freshman. When I went to MIC\'s annual event Micronesia Night and helped them prepare dinner for the event. I realized that I belonged with MIC. They took me in and treated me like one of their own. They mentored me and shaped me into the leader I am today. I owe my position as the next Pacific Islander Student Commission Director and the leader I am today to my MIC family and I am truly thankful for that. So what do I love about MIC? I love that they can create a family away from home and that they can welcome anyone into their community without question."<br><br>Si Yu\'us M&aring;\'&aring;se,<br>Santino Camacho</div>');
-  var daniele = new officerInfo("daniele.jpg", "Daniele Me&ntilde;ez", "", "ASUW President", "Guam", "philippines.jpg", "", "", "I love MIC because ladi ladi ladi dah");
+  var daniele = new officerInfo("daniele.jpg", "Daniele Me&ntilde;ez", "", "ASUW President", "Guam", "philippines.jpg", "", "", "");
   
   others.push.apply(others, [tino, daniele]);
   
@@ -167,11 +167,22 @@ $(others).each(function () {
 //================sticky header 
 
 $(window).scroll(function() {
-if ($(this).scrollTop() > 1){  
+if ($(this).scrollTop() > 200){  
     $('header').addClass("sticky");
+    $('article').addClass("about-sticky");
   }
   else{
     $('header').removeClass("sticky");
+    $('article').removeClass("about-sticky");
+  }
+});
+
+$(window).scroll(function() {
+if ($(this).scrollTop() > 200){  
+    $('footer').removeClass("hide");
+  }
+  else{
+    $('footer').addClass("hide");
   }
 });
 
